@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Petit Formal Script');
+@import url('https://fonts.googleapis.com/css?family=Playfair Display');
+body {
+    <--background-color: #80480a2a;-->
+  	background-color: #76b5c5;
+    color: #384031;
+    font-family: "Petit Formal Script", sans-serif;
+    text-align: center;
+  }
+p{
+  font-family: "Playfair Display";
+}
+
+  a {
+    color: #564e29;
+    text-decoration: underline;
+    font-family: "Petit Formal Script", sans-serif;
+  }
+  
+  a:hover {
+    color: hotpink;
+  }

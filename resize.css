@@ -1,0 +1,52 @@
+/* Text size for tablets */
+@media (max-width: 768px) {
+
+  input {
+    max-width: 45%;
+  }
+  p {
+        font-size: 20px;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: bold;
+  }
+  h4 {
+    font-size: 22vw;
+    font-weight: 900;
+  }
+  a{
+    font-size: 20px;
+  }
+  img {
+    max-width: 40%;
+    height: auto;
+  }
+  }
+  
+  /* Text size for phones */
+  @media (max-width: 480px) {
+    input {
+    max-width: 35%;
+  }
+    p {
+        font-size: 12px;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  a{
+    font-size: 12px;
+  }
+    img {
+    max-width: 80%;
+    height: auto;
+  }
+  }
+  
+  
