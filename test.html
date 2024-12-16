@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+        #language-selector {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Web Page</h1>
+<p>Hello everybody!</p>
+<p>Translate this page:</p>
+
+<div id="google_translate_element"></div>
+<div id="language-selector">
+    <label for="language">Choose language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+    <button onclick="translatePage()">Translate</button>
+</div>
+
+<p>You can translate the content of this page by selecting a language in the select box.</p>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,es',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+
+    function translatePage() {
+        var language = document.getElementById('language').value;
+        var googleTranslateElement = document.querySelector('.goog-te-combo');
+        if (googleTranslateElement) {
+            googleTranslateElement.value = language;
+            googleTranslateElement.dispatchEvent(new Event('change'));
+        }
+    }
+
+    (function() {
+        var gtScript = document.createElement('script');
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.head.appendChild(gtScript);
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var validLanguages = ['en', 'es'];
+                var language;
+                while (!language || !validLanguages.includes(language)) {
+                    language = prompt("Please choose your language: 'en' for English, 'es' for Spanish");
+                    if (!validLanguages.includes(language)) {
+                        alert("Invalid language code. Please enter 'en' for English or 'es' for Spanish.");
+                    }
+                }
+                document.getElementById('language').value = language;
+                translatePage();
+            }, 1000);
+        });
+    })();
+</script>
+
+</body>
+</html>
